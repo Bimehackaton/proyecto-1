@@ -1,0 +1,9 @@
+.btn-crear {
+	margin-bottom: 20px;
+}
+
+.remarcar_mod {
+	border-color: rgba(240,173,78,.8) !important;
+	outline: 0 !important;
+	box-shadow: 0 0 8px rgba(240,173,78,.6) !important;
+}

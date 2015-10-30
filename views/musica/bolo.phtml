@@ -1,0 +1,163 @@
+			<div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Concierto</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+			
+			
+			
+			<div class="row">
+				<div class="col-xs-1"></div>
+				
+				<div class="col-xs-10" style="margin-bottom: 15px;">
+					
+					<div class="row">
+						<?php
+									
+						$datos = $this->listaConciertos;
+						
+						for($i=0;$i<count($datos);$i++):
+							$bolo = $datos[$i];
+							
+							$id = $bolo['idBolo'];
+							
+							$cancelado = $bolo['b_cancelado'];
+							
+							?>
+							<div class="col-md-12" style="background: #eee; margin-bottom: 15px; padding-top: 15px; padding-bottom: 15px;">
+								
+										
+								<div class="col-md-12">
+									<div class="row" style="padding-bottom: 10px;">
+										<div class="col-xs-6">
+											<?php
+											
+											$visto = $bolo['b_visto'];
+											
+											if($visto == 1):
+												?>
+													<button type="button" class="btn btn-success btn-sm">INSERTADO</button>
+												<?php
+											else:
+												if($cancelado == 1):
+													?>
+														<button type="button" class="btn btn-danger btn-sm">CANCELADO</button>
+													<?php
+												else:
+													$modificado = $bolo['b_modificado'];
+													
+													if($modificado == 1):
+														?>
+															<button type="button" class="btn btn-warning btn-sm">MODIFICADO</button>
+														<?php
+													endif;
+												endif;
+											endif;
+											?>
+										</div>
+										<div class="col-xs-6 text-right">
+											<?php 
+											if($visto == 0):
+												?>
+												<form method="POST" action="<?php echo BASE_URL; ?>musica/bolo/<?php echo $bolo['idBolo']; ?>">
+													<input type="hidden" name="boloVisto" value="1" />
+													<input type="hidden" name="idVisto" value="<?php echo $bolo['idBolo']; ?>" />
+													
+													<button type="submit" class="btn btn-primary">Visto</button>
+												</form>
+												<?php
+											endif;
+											?>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-12">
+									<div class="row" style="padding-bottom: 10px;">
+										<div class="col-xs-6">
+											<img src='<?php echo $bolo['url_img']; ?>' class="img-responsive" width='338' height='236' style="max-height: 400px;" />
+										</div>
+										<div class="col-xs-6 text-right">
+											
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-12">
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon"><strong>Artista</strong></div>
+											<input style="background: #fff !important;" type="text" class="form-control<?php if(musicaModel::getOneMod($bolo['idBolo'], 'artista_b') == 1):?> remarcar_mod<?php endif; ?>" value="<?php echo $bolo['artista']; ?>">
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-6">
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon"><strong>Sala</strong></div>
+											<input style="background: #fff !important;" type="text" class="form-control<?php if(musicaModel::getOneMod($bolo['idBolo'], 'sala_b') == 1):?> remarcar_mod<?php endif; ?>" value="<?php echo $bolo['sala']; ?>">
+										</div>
+									</div>
+									
+									
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon"><strong>URL_Sala</strong></div>
+											<input style="background: #fff !important;" type="text" class="form-control<?php if(musicaModel::getOneMod($bolo['idBolo'], 'url_sala_b') == 1):?> remarcar_mod<?php endif; ?>" value="<?php echo $bolo['url_sala']; ?>">
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-6">
+									<div class="row">
+										<div class="form-group col-md-6">
+											<div class="input-group">
+												<div class="input-group-addon"><strong>Dia</strong></div>
+												<input style="background: #fff !important;" type="text" class="form-control<?php if(musicaModel::getOneMod($bolo['idBolo'], 'dia_b') == 1):?> remarcar_mod<?php endif; ?>" value="<?php echo $bolo['dia']; ?>">
+											</div>
+										</div>
+										<div class="form-group col-md-6">
+											<div class="input-group">
+												<div class="input-group-addon"><strong>Hora</strong></div>
+												<input style="background: #fff !important;" type="text" class="form-control<?php if(musicaModel::getOneMod($bolo['idBolo'], 'hora_b') == 1):?> remarcar_mod<?php endif; ?>" value="<?php echo $bolo['hora']; ?>">
+											</div>
+										</div>
+									</div>
+									
+									
+									
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon"><strong>URL_Ticket</strong></div>
+											<input style="background: #fff !important;" type="text" class="form-control<?php if(musicaModel::getOneMod($bolo['idBolo'], 'url_ticket_b') == 1):?> remarcar_mod<?php endif; ?>" value="<?php echo $bolo['url_ticket']; ?>">
+										</div>
+									</div>
+								</div>
+								<?php
+								
+								$descripcion = html_entity_decode($bolo['descripcion']);
+								$descripcion = str_replace('\n', "\n", $descripcion);
+								//$descripcion = str_replace('<br />', "\n", $descripcion);
+								$descripcion = str_replace('<p>', "", $descripcion);
+								$descripcion = str_replace('</p>', "", $descripcion);
+								$descripcion = str_replace('<div class="bbcode">', "", $descripcion);
+								$descripcion = str_replace('</div>', "", $descripcion);
+								?>
+								
+								<div class="col-md-12">
+									
+									<div class="well well-sm<?php if(musicaModel::getOneMod($bolo['idBolo'], 'descripcion_b') == 1):?> remarcar_mod<?php endif; ?>">
+										<?php echo $descripcion; ?>
+									</div>
+								</div>
+							</div>
+							<?php
+						endfor;
+						?>
+					</div>
+				</div>
+				
+				<div class="col-xs-1"></div>
+			</div>

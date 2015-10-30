@@ -1,0 +1,129 @@
+			<div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Asignar Bolos</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+			
+			
+			
+
+
+
+			<div class="row">
+				<div class="col-xs-1"></div>
+				
+				<div class="col-xs-10" style="margin-bottom: 15px;">
+					<div class="col-md-12">
+						<ul class="list-group">
+							<li class="list-group-item list-group-item-info">
+								Faltan <b><?php echo musicaModel::checkPorAsig(); ?></b> por asignar.
+							</li>
+						</ul>
+					</div>
+					
+					
+					<form method="post" action="<?php echo BASE_URL; ?>musica/asignacion">
+						<input type="hidden" name="AutoAsignar" value="1" />
+						
+						<div class="row">
+							<div class="col-md-12">
+								<div class="col-md-6" style="margin-bottom: 15px;">
+									<div style="padding: 15px;background: #eee; border-bottom: solid #ccc 2px;">
+										<input name="email1" type="checkbox" value="redaccion@coonic.com">
+										redaccion@coonic.com 
+										<span class="badge pull-right" style="background: #428bca;"><?php echo musicaModel::getPersonalAsign('redaccion@coonic.com'); ?></span>
+									</div>
+								</div>
+								<div class="col-md-6" style=" margin-bottom: 15px;">
+									<div style="padding: 15px;background: #eee; border-bottom: solid #ccc 2px;">
+										<input name="email2" type="checkbox" value="contenidos@proyectoscoonic.com">
+										contenidos@proyectoscoonic.com
+										<span class="badge pull-right" style="background: #428bca;"><?php echo musicaModel::getPersonalAsign('contenidos@proyectoscoonic.com'); ?></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						
+						<div class="row">
+							<div class="col-md-12">
+								<div class="col-md-6" style="margin-bottom: 15px;">
+									<div style="padding: 15px;background: #eee; border-bottom: solid #ccc 2px;">
+										<input name="email3" type="checkbox" value="mbahillo@coonic.com">
+										mbahillo@coonic.com
+										<span class="badge pull-right" style="background: #428bca;"><?php echo musicaModel::getPersonalAsign('mbahillo@coonic.com'); ?></span>
+									</div>
+								</div>
+								<div class="col-md-6" style=" margin-bottom: 15px;">
+									<div style="padding: 15px;background: #eee; border-bottom: solid #ccc 2px;">
+										<input name="email4" type="checkbox" value="jmvalino@coonic.com">
+										jmvalino@coonic.com
+										<span class="badge pull-right" style="background: #428bca;"><?php echo musicaModel::getPersonalAsign('jmvalino@coonic.com'); ?></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						
+						<div class="row">
+							<div class="col-md-12">
+								<div class="col-md-6" style="margin-bottom: 15px;">
+									<div style="padding: 15px;background: #eee; border-bottom: solid #ccc 2px;">
+										<input name="email5" type="checkbox" value="adediego@coonic.com">
+										adediego@coonic.com
+										<span class="badge pull-right" style="background: #428bca;"><?php echo musicaModel::getPersonalAsign('adediego@coonic.com'); ?></span>
+									</div>
+								</div>
+								<div class="col-md-6" style=" margin-bottom: 15px;">
+									<div style="padding: 15px;background: #eee; border-bottom: solid #ccc 2px;">
+										<input name="email6" type="checkbox" value="unai.prieto@hotmail.com">
+										unai.prieto@hotmail.com
+										<span class="badge pull-right" style="background: #428bca;"><?php echo musicaModel::getPersonalAsign('unai.prieto@hotmail.com'); ?></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						
+						<div class="row">
+							<div class="col-md-12">
+								<div class="col-md-6" style="margin-bottom: 15px;">
+									<div style="padding: 15px;background: #eee; border-bottom: solid #ccc 2px;">
+										<input name="email7" type="checkbox" value="cdoval@coonic.com">
+										cdoval@coonic.com
+										<span class="badge pull-right" style="background: #428bca;"><?php echo musicaModel::getPersonalAsign('cdoval@coonic.com'); ?></span>
+									</div>
+								</div>
+								<div class="col-md-6" style=" margin-bottom: 15px;">
+									<div style="padding: 15px;background: #eee; border-bottom: solid #ccc 2px;">
+										<input name="email8" type="checkbox" value="ebenito@coonic.com">
+										ebenito@coonic.com
+										<span class="badge pull-right" style="background: #428bca;"><?php echo musicaModel::getPersonalAsign('ebenito@coonic.com'); ?></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-md-6" style="margin-top: 20px; margin-bottom: 20px;">
+							<div class="form-group" >
+								<div class="input-group">
+									<div class="input-group-addon"><b>Bolos a Asignar</b></div>
+									<input class="form-control" type="number" name="totalAsignar" placeholder="Introducir cantidad" value="<?php echo musicaModel::checkPorAsig(); ?>">
+								</div>
+							</div>
+							
+							<button type="submit" class="btn btn-primary">Auto Asignar</button>
+						</div>
+					</form>
+					
+					<form method="POST" action="<?php echo BASE_URL; ?>musica/asignacion">
+						<input type="hidden" name="BorrarAsignados" value="1" />
+						<div class="col-md-6 text-right" style="margin-top: 20px; margin-bottom: 20px;">
+							<button type="submit" class="btn btn-danger">Borrar Asignados</button>
+						</div>
+					</form>
+				</div>
+				
+				<div class="col-xs-1"></div>
+			</div>
