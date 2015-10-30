@@ -26,6 +26,10 @@ try{
 catch(Exception $e){
     echo $e->getMessage();
 }
+<<<<<<< HEAD
 
 
+=======
+echo " HOLA";
+>>>>>>> 3a485126d19e8bf79204a074a99e7e637975fbcd
 ?>

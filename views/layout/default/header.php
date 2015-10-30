@@ -8,7 +8,11 @@
 		<meta name="author" content="Ivan Merino">
         <meta name="description" content="Desarrollador de Aplicaciones Web." />
         
+<<<<<<< HEAD
         <link rel="shortcut icon" type="image/x-icon" href="<?php echo $_layoutParams['ruta_img']; ?>icon.png" />
+=======
+        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $_layoutParams['ruta_img']; ?>icon.ico" />
+>>>>>>> 3a485126d19e8bf79204a074a99e7e637975fbcd
         
         <title><?php echo APP_NAME; ?></title>
         
