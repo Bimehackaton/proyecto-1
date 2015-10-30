@@ -4,8 +4,8 @@ define('BASE_URL', 'http://localhost/kaltxaki/');
 define('DEFAULT_CONTROLLER', 'index');
 define('DEFAULT_LAYOUT', 'default');
 
-define('APP_NAME', 'Kaltxaki');
-define('APP_SLOGAN', '');
+define('APP_NAME', 'PartyNet');
+define('APP_SLOGAN', 'Las hondas te hablan.');
 define('APP_COMPANY', 'Homeless Team');
 define('SESSION_TIME', 10);
 define('HASH_KEY', '52a77e5c9bc92');

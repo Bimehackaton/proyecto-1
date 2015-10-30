@@ -20,19 +20,5 @@
 				<script type="text/javascript" src="<?php echo $_layoutParams['js'][$i]; ?>"></script>
 			<?php endfor; ?>
 		<?php endif; ?>
-					
-					
-		<?php if($this->opcion == 'conciertos'):
-			?>					
-				<script>
-				$(document).ready(function() {
-					$('#dataTables-example').dataTable({
-						"order": [[ 1, "asc" ]]
-					});
-				});
-				</script>
-			<?php
-		endif;
-		?>
 	</body>
 </html>
