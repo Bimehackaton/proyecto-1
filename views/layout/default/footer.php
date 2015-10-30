@@ -1,5 +1,4 @@
-		</div>
-        <!-- /#page-wrapper -->
+
 		
 		
 		<!-- jQuery Version 1.11.0 -->
@@ -36,5 +35,4 @@
 		endif;
 		?>
 	</body>
-
 </html>
