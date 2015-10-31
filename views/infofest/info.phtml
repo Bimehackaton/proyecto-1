@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h1>Información / information</h1>
+<h2>Contacto / Contact</h2>
+<p><a href="mailto:homelessteambime@gmail.com" target="_blank">Envianos un email / Send us an email</a></p>
+<p>Dirección / Address : C/Ronda de Azkue, 1, 48902</p>
+<p>Número de contacto / Phone contact number : (+34) 944 04 00 00</p>
+<?php
+echo ('<form action="" method="post">');
+echo ('<input type="submit" name="enviar" value="mostrar mapa" />');
+echo "</form>";
+if (isset($_REQUEST['enviar']))
+    echo ('<iframe src="https://www.google.com/maps/d/embed?mid=zQWZhdvRuu68.kB1UQh3Y7pKU" width="100%" height="500px"></iframe>');
+?>
+</body>
+</html>
